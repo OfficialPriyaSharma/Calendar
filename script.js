@@ -14,6 +14,20 @@ $(function () {
             if(c >= e.length){
                 l.append('<div class = "blank"></div>');
             }
+            else{
+                var v = e[c].day;
+                var m = g(new Date(t, n-1, v))
+                    ? '<div class = "today">'
+                    : "<div>";
+                l.append(m + "" + v + "</div>");
+        var y = o[n-1];
+        a.css("background-color", y)
+            .find("h1")
+            .text(i[n-1] + " " + t);
+        f.find("div").css("color", y);
+        l.find(".today").css("background-color", y);
+        d();
+            }
         }
             }
         }
