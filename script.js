@@ -27,7 +27,45 @@ $(function () {
         f.find("div").css("color", y);
         l.find(".today").css("background-color", y);
         d();
-            }
+    }
+    function h(){
+        var e = [];
+        for( var r = 1; r < v(t, n) + 1; r++){
+            e.push({ day: r, weekday: s[m(t, n, r)] });
+        }
+        return e;
+    }
+    function p() {
+        f.empty();
+        for (var e = 0; e < 7; e++){
+            f.append("<div>" + s[e].substring(0, 3) + "</div>");
+        }
+    }
+    function d(){
+        var t;
+        var n = $("calendar").css("width", e + "px");
+        n.find((t = "#calendar_weekdays, #calendar_content"))
+            .css("width", e + "px") 
+            .find("div")
+            .css({
+            width: e / 7 + "px",
+            height: e / 7 + "px",
+            "line-height": e / 7 + "px",
+            });
+        n.find("#calendar_header")
+            .css({ height: e * (1 / 7) + "px"})
+            .find('i[class^="icon-chevron"]')
+            .css("line-height", e * (1 / 7) + "px");
+    }
+    function v(e, t){
+        return new Date(e, t, 0).getDate();
+    }
+    function m(e, t, n){
+        return new Date(e, t - 1, n).getDay();
+    }
+    function g(e){
+        return y(new Date()) == y(e);
+    }
         }
             }
         }
