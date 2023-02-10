@@ -47,7 +47,7 @@ $(function () {
     }
     function d() {
         var t;
-        var n = $("calendar").css("width", e + "px");
+        var n = $("#calendar").css("width", e + "px");
         n.find((t = "#calendar_weekdays, #calendar_content"))
             .css("width", e + "px")
             .find("div")
